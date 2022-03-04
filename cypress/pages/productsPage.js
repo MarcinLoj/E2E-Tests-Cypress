@@ -1,6 +1,7 @@
 class ProductsPage {
     elements = {
-        searchProductInput: () => cy.get('#search_product')
+        searchProductInput: () => cy.get('#search_product'),
+        
     }
     
 }

@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('seedData', (path) => {
+    return cy.request(path).then(res => {
+        cy.writeFile('cypress/fixtures/data.json', res.body)
+    })
+})

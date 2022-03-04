@@ -5,7 +5,7 @@ const { womenDressCategoryPage, womenTopsCategoryPage, womenSareeCategoryPage,
     kidsTopsAndShirtsCategoryPage, poloBrandPage, bibaBrandPage,
     madameBrandPage, babyhugBrandPage, kookieKidsBrandPage,
     mastAndHarbourBrandPage, allenSollyJuniorBrandPage,
-    hAndMBrandPage } = endpoints;
+    hAndMBrandPage, specifiedProduct, specifiedProductDetail } = endpoints;
 
 class GlobalElements {
     elements = {
@@ -35,8 +35,23 @@ class GlobalElements {
         menJeansCategory: () => cy.get(`[href="${menJeansCategoryPage}"]`),
         kidsDressCategory: () => cy.get(`[href="${kidsDressCategoryPage}"]`),
         kidsTopsAndShirtsCategory: () => cy.get(`[href="${kidsTopsAndShirtsCategoryPage}"]`),
-        featuresItemsHeader: () => cy.get('.features_items > h2')
+        featuresItemsHeader: () => cy.get('.features_items > h2'),
+        productImg: (productId) => cy.get(`[src="${specifiedProduct}${productId}"]`),
+        viewProductButton: (productId) => cy.get(`a[href="${specifiedProductDetail}${productId}"]`),
+        addToCartButton: (productId) => cy.get(`a[data-product-id="${productId}"]`),
+        productHeader: (productId) => cy.get(`[src="${specifiedProduct}${productId}"] + h2`),
+        productParagraph: (productId) => cy.get(`[src="${specifiedProduct}${productId}"] + h2 + p`)
     }
+        state() {
+            count = 3;
+            return {
+                increment: (data) => {
+                    if(count < data.length) 
+                    count++;
+                }
+            }
+        }
+        
 }
 
 module.exports = new GlobalElements();
