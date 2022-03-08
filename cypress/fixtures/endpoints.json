@@ -11,6 +11,7 @@
     "specifiedProduct": "/get_product_picture/",
     "specifiedProductDetail": "/product_details/",
     "carouselImages": "/static/images/home/girl",
+    "productDetailsImages": "/static/images/product-details/",
     "womenDressCategoryPage": "/category_products/1",
     "womenTopsCategoryPage": "/category_products/2",
     "womenSareeCategoryPage": "/category_products/7",

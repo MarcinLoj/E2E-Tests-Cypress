@@ -1,7 +1,9 @@
 {
-    "textOrangeColor": "rgb(254, 152, 15)",
     "textGrayColorFirst": "rgb(180, 177, 171)",
     "textGrayColorSecond": "rgb(105, 103, 99)",
     "hoverColor": "rgb(254, 152, 15)",
-    "textBoldColor": "rgb(54, 52, 50)"
+    "textBoldColor": "rgb(54, 52, 50)",
+    "textBrownColor": "rgb(165, 42, 42)",
+    "orangeColor": "rgb(254, 152, 15)",
+    "grayColorThird": "rgb(51, 51, 51)"
 }

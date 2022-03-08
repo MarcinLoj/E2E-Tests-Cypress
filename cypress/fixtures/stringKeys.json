@@ -21,7 +21,7 @@
     "womenCategoryText": "Women",
     "menCategoryText": "Men",
     "kidsCategoryText": "Kids",
-    "categoryHeaderText": "Category",
+    "categoryText": "Category",
     "brandHeaderText": "Brands",
     "womenDressCategoryText": "Dress ",
     "womenTopsCategoryText": "Tops ",
@@ -39,5 +39,15 @@
     "brandKookieKidsHeaderText": "Brand - Kookie Kids Products",
     "brandBibaHeaderText": "Brand - Biba Products",
     "addToCartText": "Add to cart",
-    "viewProductText": "View Product"
+    "viewProductText": "View Product",
+    "inStockText": "Availability: In Stock",
+    "conditionText": "Condition: New",
+    "brandText": "Brand: ",
+    "labelText": "Quantity:",
+    "modalHeaderText": "Added!",
+    "modalParagraphText": "Your product has been added to cart.",
+    "modalLinkButtonText": "View Cart",
+    "modalContinueButtonText": "Continue Shopping",
+    "signupHeaderText": "New User Signup!",
+    "enterAccountInformationHeaderText": "Enter Account Information"
 }

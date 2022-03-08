@@ -1,4 +1,6 @@
 {
     "baseUrl": "https://automationexercise.com",
-    "watchForFileChanges": false
+    "watchForFileChanges": false,
+    "defaultCommandTimeout": 10000,
+    "redirectionLimit": 100
 }

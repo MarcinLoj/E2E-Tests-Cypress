@@ -37,7 +37,7 @@ const {
         brandKookiekidsText, brandMadameText,
         brandMastAndHarbourText, womenCategoryText,
         menCategoryText, kidsCategoryText,
-        brandHeaderText, categoryHeaderText,
+        brandHeaderText, categoryText,
         womenDressCategoryText, womenSareeCategoryText,
         womenTopsCategoryText, menJeansCategoryText,
         menTShirtsCategoryText, kidsDressCategoryText,
@@ -49,7 +49,7 @@ const {
       } = keys
 const {
         textGrayColorFirst, textBoldColor,
-        hoverColor, textOrangeColor,
+        hoverColor, orangeColor,
         textGrayColorSecond
       } = styleGuide
       
@@ -61,15 +61,12 @@ const { headerTC } = TestCasesPage.elements;
 const { headerApi } = ApiTestingPage.elements;
 const { headerContactUs } = ContactUsPage.elements;
 
-const { carouselImage, testCasesButton,
+const { carouselImage, 
     carouselHeader1, carouselHeader2, 
     carouselIndicator, carouselParagraph, 
-    carouselRightChevron, productsButton,
-    cartButton, signupButton,
+    carouselRightChevron, 
     carouselButtonTestCase, carouselButtonApisList,
-    logo, homeButton,
-    carouselLeftChevron, apiTestingButton,
-    contactUsButton
+    carouselLeftChevron,
   } = Homepage.elements;
 
 const { 
@@ -86,7 +83,11 @@ const {
     womenDressCategory, womenTopsCategory,
     womenSareeCategory, menTShirtsCategory,
     menJeansCategory, kidsDressCategory,
-    kidsTopsAndShirtsCategory, featuresItemsHeader
+    kidsTopsAndShirtsCategory, featuresItemsHeader,
+    getSidebarElementText, apiTestingButton,
+    contactUsButton, logo, homeButton,
+    productsButton, testCasesButton,
+    cartButton, signupButton,
     } = GlobalElements.elements
 
 describe('Homepage tests', function() {
@@ -187,7 +188,7 @@ describe('Homepage tests', function() {
                 carouselHeader2().should('be.visible');
                 carouselParagraph().should('be.visible');
 
-                carouselHeader1().find('span').should('have.css', 'color', `${textOrangeColor}`).
+                carouselHeader1().find('span').should('have.css', 'color', `${orangeColor}`).
                 and('have.text', `${carouselHeader1SpanText}`)
                 
                 carouselHeader1().should('have.css', 'color', `${textGrayColorFirst}`).
@@ -239,85 +240,85 @@ describe('Homepage tests', function() {
     context('Left Sidebar Tests', function () {
         it('check section elements content and CSS', function() {
             categoryHeader().should('be.visible').
-            and('have.text', `${categoryHeaderText}`).
-            and('have.css', 'color', `${textOrangeColor}`);
+            and('have.text', `${categoryText}`).
+            and('have.css', 'color', `${orangeColor}`);
 
             brandsHeader().should('be.visible').
             and('have.text', `${brandHeaderText}`).
-            and('have.css', 'color', `${textOrangeColor}`);
+            and('have.css', 'color', `${orangeColor}`);
 
             womenCategory().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${womenCategoryText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             menCategory().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${menCategoryText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             kidsCategory().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${kidsCategoryText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
             hmBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandHMText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             poloBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandPoloText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             bibaBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandBibaText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             madameBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandMadameText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             babyhugBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandBabyhugText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             kookiekidsBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandKookiekidsText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             mastharbourBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandMastAndHarbourText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
 
             allensollyjuniorBrand().should('be.visible').
             and(elem => {
-                const txt = Homepage.getSidebarElementText(elem)
+                const txt = getSidebarElementText(elem)
                 expect(txt).to.eq(`${brandAllenSollyJuniorText.toUpperCase()}`)
                 expect(elem).to.have.css('color',`${textGrayColorSecond}`)
             })
@@ -409,21 +410,21 @@ describe('Homepage tests', function() {
                         Homepage.navigateTo('Dress', womenDressCategory());
                         cy.url().should('eq', `${baseUrl}${womenDressCategoryPage}`);
                         featuresItemsHeader().should('have.text', `${womenDressHeaderText}`).
-                        and('have.css', 'color', `${textOrangeColor}`)
+                        and('have.css', 'color', `${orangeColor}`)
                     })
                     it('Tops', function() {
                         womenCategoryExpandIcon().click();
                         Homepage.navigateTo('Tops', womenTopsCategory());
                         cy.url().should('eq', `${baseUrl}${womenTopsCategoryPage}`);
                         featuresItemsHeader().should('have.text', `${womenTopsHeaderText}`).
-                        and('have.css', 'color', `${textOrangeColor}`)
+                        and('have.css', 'color', `${orangeColor}`)
                     })
                     it('Saree', function() {
                         womenCategoryExpandIcon().click();
                         Homepage.navigateTo('Saree', womenSareeCategory());
                         cy.url().should('eq', `${baseUrl}${womenSareeCategoryPage}`);
                         featuresItemsHeader().should('have.text', `${womenSareeHeaderText}`).
-                        and('have.css', 'color', `${textOrangeColor}`)
+                        and('have.css', 'color', `${orangeColor}`)
                     })
                 })
                 context('Men', function() {
@@ -432,14 +433,14 @@ describe('Homepage tests', function() {
                         Homepage.navigateTo('TShirts', menTShirtsCategory());
                         cy.url().should('eq', `${baseUrl}${menTShirtsCategoryPage}`);
                         featuresItemsHeader().should('have.text', `${menTShirtsHeaderText}`).
-                        and('have.css', 'color', `${textOrangeColor}`)
+                        and('have.css', 'color', `${orangeColor}`)
                     })
                     it('Jeans', function() {
                         menCategoryExpandIcon().click();
                         Homepage.navigateTo('Jeans', menJeansCategory());
                         cy.url().should('eq', `${baseUrl}${menJeansCategoryPage}`);
                         featuresItemsHeader().should('have.text', `${menJeansHeaderText}`).
-                        and('have.css', 'color', `${textOrangeColor}`)
+                        and('have.css', 'color', `${orangeColor}`)
                     })  
                 })
                 context('Kids', function() {
@@ -448,14 +449,14 @@ describe('Homepage tests', function() {
                         Homepage.navigateTo('TShirts', kidsDressCategory());
                         cy.url().should('eq', `${baseUrl}${kidsDressCategoryPage}`);
                         featuresItemsHeader().should('have.text', `${kidsDressHeaderText}`).
-                        and('have.css', 'color', `${textOrangeColor}`)
+                        and('have.css', 'color', `${orangeColor}`)
                     })
                     it('Tops and Shirts', function() {
                         kidsCategoryExpandIcon().click();
                         Homepage.navigateTo('Tops and Shirts', kidsTopsAndShirtsCategory());
                         cy.url().should('eq', `${baseUrl}${kidsTopsAndShirtsCategoryPage}`);
                         featuresItemsHeader().should('have.text', `${kidsTopsAndShirtsHeaderText}`).
-                        and('have.css', 'color', `${textOrangeColor}`)
+                        and('have.css', 'color', `${orangeColor}`)
                     })  
                 })
             })
@@ -464,49 +465,49 @@ describe('Homepage tests', function() {
                     Homepage.navigateTo('Polo', poloBrand());
                     cy.url().should('eq', `${baseUrl}${poloBrandPage}`);
                     featuresItemsHeader().should('have.text', `${brandPoloHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
                 it('H&M', function() {
                     Homepage.navigateTo('H&M', hmBrand());
                     cy.url().should('eq', `${baseUrl}${hAndMBrandPage}`);
                     featuresItemsHeader().should('have.text', `${brandHAndMHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
                 it('Madame', function() {
                     Homepage.navigateTo('Madame', madameBrand());
                     cy.url().should('eq', `${baseUrl}${madameBrandPage}`)
                     featuresItemsHeader().should('have.text', `${brandMadameHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
                 it('Mast & Harbour', function() {
                     Homepage.navigateTo('Mast & Harbour', mastharbourBrand());
                     cy.url().should('eq', `${baseUrl}${mastAndHarbourBrandPage}`)
                     featuresItemsHeader().should('have.text', `${brandMastAndHarbourHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
                 it('Babyhug', function() {
                     Homepage.navigateTo('Babyhug', babyhugBrand());
                     cy.url().should('eq', `${baseUrl}${babyhugBrandPage}`)
                     featuresItemsHeader().should('have.text', `${brandBabyhugHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
                 it('Allen Solly Junior', function() {
                     Homepage.navigateTo('Allen Solly Junior', allensollyjuniorBrand());
                     cy.url().should('eq', `${baseUrl}${allenSollyJuniorBrandPage}`)
                     featuresItemsHeader().should('have.text', `${brandAllenSollyJuniorHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
                 it('Kookie Kids', function() {
                     Homepage.navigateTo('Kookie Kids', kookiekidsBrand());
                     cy.url().should('eq', `${baseUrl}${kookieKidsBrandPage}`)
                     featuresItemsHeader().should('have.text', `${brandKookieKidsHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
                 it('Biba', function() {
                     Homepage.navigateTo('Biba', bibaBrand());
                     cy.url().should('eq', `${baseUrl}${bibaBrandPage}`)
                     featuresItemsHeader().should('have.text', `${brandBibaHeaderText}`).
-                    and('have.css', 'color', `${textOrangeColor}`)
+                    and('have.css', 'color', `${orangeColor}`)
                 })
             })
         })

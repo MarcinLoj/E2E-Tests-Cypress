@@ -38,9 +38,21 @@ class GlobalElements {
         featuresItemsHeader: () => cy.get('.features_items > h2'),
         productImg: (productId) => cy.get(`[src="${specifiedProduct}${productId}"]`),
         viewProductButton: (productId) => cy.get(`a[href="${specifiedProductDetail}${productId}"]`),
-        addToCartButton: (productId) => cy.get(`a[data-product-id="${productId}"]`),
+        addToCartButton: (productId) => cy.get(`.productinfo.text-center > a[data-product-id="${productId}"]`),
         productHeader: (productId) => cy.get(`[src="${specifiedProduct}${productId}"] + h2`),
-        productParagraph: (productId) => cy.get(`[src="${specifiedProduct}${productId}"] + h2 + p`)
+        productParagraph: (productId) => cy.get(`[src="${specifiedProduct}${productId}"] + h2 + p`),
+        modalHeader: () => cy.get('.modal-title.w-100'),
+        modalParagraph: () => cy.get('.modal-body > .text-center:nth-of-type(1)'),
+        modalLinkButton: () => cy.get('.modal-body > .text-center > a'),
+        modalContinueButton: () => cy.get('.btn.btn-success.close-modal.btn-block'),
+        homeButton: () => cy.get('.shop-menu > .nav > :nth-child(1) > a'),
+        logo: () => cy.get('a > img'),
+        productsButton: () => cy.get('.shop-menu > .nav > :nth-child(2) > a'),
+        cartButton: () => cy.get('.shop-menu > .nav > :nth-child(3) > a'),
+        signupButton: () => cy.get('.shop-menu > .nav > :nth-child(4) > a'),
+        testCasesButton: () => cy.get('.shop-menu > .nav > :nth-child(5) > a'),
+        apiTestingButton: () => cy.get('.shop-menu > .nav > :nth-child(6) > a'),
+        contactUsButton: () => cy.get('.shop-menu > .nav > :nth-child(7) > a')
     }
         state() {
             count = 3;
@@ -51,7 +63,9 @@ class GlobalElements {
                 }
             }
         }
-        
+        getSidebarElementText(element, contentNumber = 2) {
+            return element.contents().get(contentNumber).nodeValue.trim().toUpperCase()
+        }
 }
 
 module.exports = new GlobalElements();

@@ -30,3 +30,14 @@ Cypress.Commands.add('seedData', (path) => {
         cy.writeFile('cypress/fixtures/data.json', res.body)
     })
 })
+
+Cypress.Commands.add('wrapProductsOnSpecifiedPage', (readFilePath, productType, categoryType) => {
+    cy.readFile(readFilePath).then(({ products }) => {
+        cy.wrap(products.filter(({brand, category: {category}, category: {usertype: {usertype}}}) => {
+            return categoryType === 'Brand' 
+            ? brand === categoryType 
+            : category === categoryType && usertype === productType
+            
+        }))
+    })
+})
